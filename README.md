@@ -1,6 +1,11 @@
 # indLight
 Controller for indirect room lighting using 12 V WS2811 LED strips. Based on the ESP8266-2.
 
-![Top side](https://github.com/yetifrisstlama/indLight/raw/master/indLight3.jpg)
+Software will be comming soon (with MQTT client).
 
-![Bottom side](https://github.com/yetifrisstlama/indLight/raw/master/indLight4.jpg)
+## Pictures
+
+This is the panelized version which includes a top lid, to be mounted with stand-offs:
+
+![Top side](https://github.com/yetifrisstlama/indLight/raw/master/indLight5.jpg)
+
