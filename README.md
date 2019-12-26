@@ -7,5 +7,5 @@ Software will be comming soon (with MQTT client).
 
 This is the panelized version which includes a top lid, to be mounted with stand-offs:
 
-![Top side](https://github.com/yetifrisstlama/indLight/raw/master/indLight5.jpg)
+![Top side](pcb/indLight5.jpg)
 
