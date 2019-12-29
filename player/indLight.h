@@ -17,6 +17,7 @@ void animatorRainbow( float setBrightness, float setSpeed, float setWavenumber )
 void animatorSunrise( float seconds );
 void animatorAuroa( float setCreateProp );
 void animatorRollingArray(int slp);
+void animatorPerlin(float setPersistence, int setOctaves, float setBrightness);
 void die( char *s );
 
 
