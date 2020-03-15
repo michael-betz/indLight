@@ -61,8 +61,7 @@ void setup() {
 }
 
 void loop() {
-	int packetSize = Udp.parsePacket();
-	if (packetSize <= 0)
+	if (!Udp.parsePacket())
 		return;
 
 	int len = Udp.read(udp_buff, 4095);
