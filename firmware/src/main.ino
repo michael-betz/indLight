@@ -37,10 +37,10 @@
 #define UDP_PORT 2711
 
 // WS2812 black LED strips
-// Adafruit_NeoPixel strip(N_LEDS, PIN_DATA, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip(N_LEDS, PIN_DATA, NEO_GRB + NEO_KHZ800);
 
 // WS2811 installed on the wall
-Adafruit_NeoPixel strip(N_LEDS, PIN_DATA, NEO_BRG + NEO_KHZ800);
+// Adafruit_NeoPixel strip(N_LEDS, PIN_DATA, NEO_BRG + NEO_KHZ800);
 
 WiFiUDP Udp;
 uint8_t udp_buff[4096];
@@ -54,8 +54,7 @@ void setup() {
 
 	WiFi.begin(WIFI_NAME, WIFI_PW);
 
-	Serial.printf("\nThis is indLight firmware built on %d\n", CURRENT_TIME);
-	Serial.printf("Connecting to %s ", WIFI_NAME);
+	Serial.printf("\nThis is indLight, connecting to %s ", WIFI_NAME);
 
 	while (WiFi.status() != WL_CONNECTED) {
 		delay(500);
