@@ -27,24 +27,31 @@
 #include <Adafruit_NeoPixel.h>
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
-#include "pw.h"
 
 #define PIN_DATA 3
-#define N_LEDS 7
+#define N_LEDS 100
 #define UDP_PORT 2711
 
-Adafruit_NeoPixel strip(N_LEDS, PIN_DATA, NEO_GRB + NEO_KHZ800);
+// WS2812 black LED strips
+// Adafruit_NeoPixel strip(N_LEDS, PIN_DATA, NEO_GRB + NEO_KHZ800);
+
+// WS2811 installed on the wall
+Adafruit_NeoPixel strip(N_LEDS, PIN_DATA, NEO_BRG + NEO_KHZ800);
 
 WiFiUDP Udp;
 uint8_t udp_buff[4096];
 
 void setup() {
 	Serial.begin(115200);
-	strip.begin();
 
-	WiFi.begin(WIFI_NAME, WIFI_PW);
+	strip.begin();
 	strip.setPixelColor(0, 0xFF, 0, 0);
 	strip.show();
+
+	WiFi.begin(WIFI_NAME, WIFI_PW);
+
+	Serial.printf("\nThis is indLight firmware built on %d\n", CURRENT_TIME);
+	Serial.printf("Connecting to %s ", WIFI_NAME);
 
 	while (WiFi.status() != WL_CONNECTED) {
 		delay(500);
@@ -54,7 +61,7 @@ void setup() {
 	strip.setPixelColor(0, 0, 0xFF, 0);
 	strip.show();
 
-	Serial.print("Connected! IP:");
+	Serial.print("\nConnected! IP: ");
 	Serial.println(WiFi.localIP());
 
 	Udp.begin(UDP_PORT);
