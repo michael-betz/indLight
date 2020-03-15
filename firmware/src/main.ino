@@ -50,6 +50,9 @@ void loop() {
 	int led_len = (udp_buff[3] << 8) | udp_buff[4];
 	uint8_t *p = &udp_buff[5];
 
+	if (led_len > strip.numPixels())
+		led_len = strip.numPixels();
+
 	for (int i=0; i<led_len; i++) {
 		strip.setPixelColor(led_offset, p[0], p[1], p[2]);
 		led_offset++;
