@@ -260,9 +260,9 @@ uint8_t *putRgb(uint8_t *rgbPointer, rgb rgbColor){
     //     (uint8_t)(colorLimit(rgbColor.g)*255)
     // );
 
-    *rgbPointer++ = (uint8_t)(colorLimit(rgbColor.b)*255);
     *rgbPointer++ = (uint8_t)(colorLimit(rgbColor.r)*255);
     *rgbPointer++ = (uint8_t)(colorLimit(rgbColor.g)*255);
+    *rgbPointer++ = (uint8_t)(colorLimit(rgbColor.b)*255);
     return rgbPointer;
 }
 
