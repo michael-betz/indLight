@@ -1,6 +1,7 @@
 #include <Adafruit_NeoPixel.h>
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
+#include "pw.h"
 
 #define PIN_DATA 3
 #define N_LEDS 7
@@ -15,7 +16,7 @@ void setup() {
 	Serial.begin(115200);
 	strip.begin();
 
-	WiFi.begin("WIFI NAME", "WIFI PW");
+	WiFi.begin(WIFI_NAME, WIFI_PW);
 	strip.setPixelColor(0, 0xFF, 0, 0);
 	strip.show();
 
