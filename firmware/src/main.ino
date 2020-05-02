@@ -37,10 +37,10 @@
 #define UDP_PORT 2711
 
 // WS2812 black LED strips
-Adafruit_NeoPixel strip(N_LEDS, PIN_DATA, NEO_GRB + NEO_KHZ800);
+// Adafruit_NeoPixel strip(N_LEDS, PIN_DATA, NEO_GRB + NEO_KHZ800);
 
 // WS2811 installed on the wall
-// Adafruit_NeoPixel strip(N_LEDS, PIN_DATA, NEO_BRG + NEO_KHZ800);
+Adafruit_NeoPixel strip(N_LEDS, PIN_DATA, NEO_BRG + NEO_KHZ800);
 
 WiFiUDP Udp;
 uint8_t udp_buff[4096];
